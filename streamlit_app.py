@@ -7,8 +7,8 @@ def extract_urls_from_sitemap(sitemap_url):
     response = requests.get(sitemap_url, headers=headers, timeout=60)
     soup = BeautifulSoup(response.content, 'xml')
     urls = []
-    for loc in soup.find_all('content_loc'):
-        urls.append(content_loc.text)
+    for loc in soup.find_all('video:content_loc'):
+        urls.append(video:content_loc.text)
     return urls
 
 st.set_page_config(page_title="Sitemap URL Extractor", page_icon=":memo:", layout="wide")
